@@ -1,0 +1,199 @@
+:root {
+  --darkBlue: hsl(238, 29%, 16%);
+  --orange: hsl(14, 88%, 65%);
+  --linearGradient: linear-gradient(
+    to bottom,
+    hsl(273, 75%, 66%),
+    hsl(240, 73%, 65%)
+  );
+
+  --darkGray: hsl(237, 12%, 33%);
+  --gray: hsl(240, 6%, 50%);
+  --lightGray: hsl(240, 5%, 91%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  font-size: 1.8rem;
+
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    hsl(273, 75%, 66%),
+    hsl(240, 73%, 65%)
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 32.7rem;
+  padding: 13.2rem 2.4rem 4.8rem;
+  background-color: #fff;
+
+  border-radius: 23px;
+
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+
+  position: relative;
+}
+
+/******* mobile img  ********/
+.shadowMobile {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.womanMobile {
+  position: absolute;
+  top: -20.5%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 23.7rem;
+}
+
+/******* desktop img  ********/
+.shadowDesktop {
+  display: none;
+}
+
+.womanDesktop {
+  display: none;
+}
+
+.boxImg {
+  display: none;
+}
+
+.cardContent > h1 {
+  margin-bottom: 3.8rem;
+
+  text-align: center;
+
+  font-weight: 700;
+  font-size: 3.2rem;
+
+  color: var(--darkBlue);
+}
+
+details {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid var(--lightGray);
+}
+
+summary {
+  list-style-type: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+  color: var(--darkGray);
+}
+
+summary:hover {
+  color: var(--orange);
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary > span {
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+summary > img {
+  transition: all 0.3s linear;
+}
+
+details[open] summary > img {
+  transform: rotate(180deg);
+}
+
+details[open] summary > span {
+  color: var(--darkBlue);
+
+  font-weight: 700;
+}
+
+.accordionContent > p {
+  margin-top: 1.2rem;
+
+  font-weight: 400;
+  font-size: 1.2rem;
+
+  color: var(--gray);
+}
+
+/********* Desktop *********/
+@media (min-width: 1100px) {
+  main {
+    position: relative;
+  }
+
+  .card {
+    width: 92rem;
+    padding: 6.5rem 9.5rem 8.3rem 47.6rem;
+
+    overflow: hidden;
+  }
+
+  /******* mobile img  ********/
+  .shadowMobile {
+    display: none;
+  }
+
+  .womanMobile {
+    display: none;
+  }
+
+  /******* desktop img  ********/
+
+  .shadowDesktop {
+    display: block;
+    position: absolute;
+    top: -30rem;
+    left: -58rem;
+
+    width: 96.4rem;
+  }
+
+  .womanDesktop {
+    display: block;
+    position: absolute;
+    top: 6rem;
+    left: -8rem;
+
+    width: 47.2rem;
+  }
+
+  .boxImg {
+    display: block;
+    position: absolute;
+    top: 20rem;
+    left: -8.5rem;
+
+    width: 17rem;
+
+    z-index: 1;
+  }
+}
